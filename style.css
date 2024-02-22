@@ -1,0 +1,106 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #632CA6;
+}
+
+#breed-select {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 20px;
+}
+
+.image-wrap {
+    position: relative;
+    border: solid 2px black;
+    padding: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 600px; /* Ensure the container does not exceed 600px */
+}
+
+.image-wrap img {
+    max-width: 100%; /* Makes the image responsive within the container */
+    max-height: auto; /* Maintain aspect ratio */
+    transition: transform 0.25s ease-in-out;
+}
+
+.image-wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #632CA6; /* Purple overlay */
+    opacity: 0.7;
+    transition: opacity 0.25s ease-in-out;
+}
+
+.image-wrap:hover::before {
+    opacity: 0; /* Overlay disappears on hover */
+}
+
+#refresh-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #632CA6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.25s;
+}
+
+#refresh-button:hover {
+    background-color: #7a42b6;
+}
+
+#breed-select {
+    margin: 20px auto; /* Centers the dropdown */
+    padding: 10px 20px; /* Increased padding for a more pill-shaped look */
+    font-size: 1rem;
+    color: white; /* Text color */
+    background-color: #632CA6; /* Background color */
+    border: none; /* Removes the default border */
+    border-radius: 50px; /* Creates the pill shape */
+    cursor: pointer; /* Changes the cursor to a pointer to indicate it's clickable */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle drop shadow */
+    width: auto; /* Adjust the width as needed, auto for content width */
+    display: block; /* Ensures the styling applies correctly */
+    -webkit-appearance: none; /* Removes the default browser styling on dropdowns */
+    -moz-appearance: none;
+    appearance: none;
+    outline: none; /* Removes the outline to keep the custom styling */
+}
+
+/* To add a down arrow symbol to the dropdown */
+#breed-select {
+    background-image: linear-gradient(45deg, transparent 50%, white 50%), linear-gradient(135deg, white 50%, transparent 50%), linear-gradient(to right, #632CA6, #632CA6);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+    background-repeat: no-repeat;
+}
+
+/* Focus state to keep the outline in case of keyboard navigation for accessibility */
+#breed-select:focus {
+    outline: 1px solid #fff; /* Adds an outline on focus for accessibility */
+    outline-offset: 2px; /* Adjusts the distance of the outline from the border */
+}
