@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     window.DD_LOGS && window.DD_LOGS.logger.info('DOM fully loaded and parsed. Lets browse the doggos @ Google Next 24');
-    
+
 
     const select = document.getElementById('breed-select');
     const container = document.getElementById('dog-image-container');
